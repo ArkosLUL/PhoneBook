@@ -1,0 +1,9 @@
+D:\Артем\OP\View\View\bin\Debug\View.exe.config
+D:\Артем\OP\View\View\bin\Debug\View.exe
+D:\Артем\OP\View\View\bin\Debug\View.pdb
+D:\Артем\OP\View\View\obj\Debug\View.csprojResolveAssemblyReference.cache
+D:\Артем\OP\View\View\obj\Debug\View.PhoneBookView.resources
+D:\Артем\OP\View\View\obj\Debug\View.Properties.Resources.resources
+D:\Артем\OP\View\View\obj\Debug\View.csproj.GenerateResource.Cache
+D:\Артем\OP\View\View\obj\Debug\View.exe
+D:\Артем\OP\View\View\obj\Debug\View.pdb
