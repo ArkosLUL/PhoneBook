@@ -30,8 +30,6 @@
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.labelPhoneNumber = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.labelLastName = new System.Windows.Forms.Label();
@@ -48,22 +46,35 @@
             this.btnChange = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.ContactIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SkypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ContactIDColumn,
+            this.NameColumn,
+            this.LastNameColumn,
+            this.PhoneNumberColumn,
+            this.SkypeColumn,
+            this.EmailColumn});
             this.dataGridView.Location = new System.Drawing.Point(12, 205);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(817, 239);
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.Size = new System.Drawing.Size(820, 239);
             this.dataGridView.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.labelPhoneNumber);
             this.panel1.Controls.Add(this.EmailTextBox);
             this.panel1.Controls.Add(this.labelLastName);
@@ -76,24 +87,8 @@
             this.panel1.Controls.Add(this.NameTextBox);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(817, 160);
+            this.panel1.Size = new System.Drawing.Size(817, 136);
             this.panel1.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 136);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "label6";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(69, 133);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 11;
             // 
             // labelPhoneNumber
             // 
@@ -182,19 +177,20 @@
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(92, 178);
+            this.SearchTextBox.Location = new System.Drawing.Point(92, 165);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(350, 20);
             this.SearchTextBox.TabIndex = 2;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(11, 176);
+            this.btnSearch.Location = new System.Drawing.Point(11, 163);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Поиск";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnAdd
             // 
@@ -204,6 +200,7 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnChange
             // 
@@ -213,6 +210,7 @@
             this.btnChange.TabIndex = 5;
             this.btnChange.Text = "Изменить";
             this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // btnDelete
             // 
@@ -222,6 +220,7 @@
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -231,6 +230,49 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // ContactIDColumn
+            // 
+            this.ContactIDColumn.HeaderText = "ID";
+            this.ContactIDColumn.Name = "ContactIDColumn";
+            this.ContactIDColumn.ReadOnly = true;
+            this.ContactIDColumn.Width = 25;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.HeaderText = "Имя";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            this.NameColumn.Width = 150;
+            // 
+            // LastNameColumn
+            // 
+            this.LastNameColumn.HeaderText = "Фамилия";
+            this.LastNameColumn.Name = "LastNameColumn";
+            this.LastNameColumn.ReadOnly = true;
+            this.LastNameColumn.Width = 150;
+            // 
+            // PhoneNumberColumn
+            // 
+            this.PhoneNumberColumn.HeaderText = "Телефон";
+            this.PhoneNumberColumn.Name = "PhoneNumberColumn";
+            this.PhoneNumberColumn.ReadOnly = true;
+            this.PhoneNumberColumn.Width = 150;
+            // 
+            // SkypeColumn
+            // 
+            this.SkypeColumn.HeaderText = "Skype";
+            this.SkypeColumn.Name = "SkypeColumn";
+            this.SkypeColumn.ReadOnly = true;
+            this.SkypeColumn.Width = 150;
+            // 
+            // EmailColumn
+            // 
+            this.EmailColumn.HeaderText = "E-mail";
+            this.EmailColumn.Name = "EmailColumn";
+            this.EmailColumn.ReadOnly = true;
+            this.EmailColumn.Width = 150;
             // 
             // PhoneBookView
             // 
@@ -267,8 +309,6 @@
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label labelLastName;
         private System.Windows.Forms.TextBox LastNameTextBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label labelPhoneNumber;
         private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.TextBox SearchTextBox;
@@ -277,6 +317,12 @@
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContactIDColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNumberColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SkypeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmailColumn;
     }
 }
 

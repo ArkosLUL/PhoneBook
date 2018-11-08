@@ -7,3 +7,7 @@ D:\Артем\OP\View\View\obj\Debug\View.Properties.Resources.resources
 D:\Артем\OP\View\View\obj\Debug\View.csproj.GenerateResource.Cache
 D:\Артем\OP\View\View\obj\Debug\View.exe
 D:\Артем\OP\View\View\obj\Debug\View.pdb
+D:\Артем\OP\View\View\bin\Debug\Google.Protobuf.dll
+D:\Артем\OP\View\View\bin\Debug\MySql.Data.dll
+D:\Артем\OP\View\View\bin\Debug\Google.Protobuf.xml
+D:\Артем\OP\View\View\bin\Debug\MySql.Data.xml

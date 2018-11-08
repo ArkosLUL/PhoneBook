@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using View.View;
+using MySql.Data.MySqlClient;
+using PhoneBook;
+
 
 namespace View
 {
     public partial class PhoneBookView : Form, IView
     {
+        Class1 model = new Class1();
+
         public PhoneBookView()
         {
             InitializeComponent();
@@ -88,6 +93,31 @@ namespace View
             {
                 SkypeTextBox.Text = value;
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
